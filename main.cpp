@@ -8,8 +8,9 @@ using namespace std;
 
 int main( int argc, char *argv[] )
 {
+    int trytelength=11;
     short byte=0;
-    short tryte[11];
+    short tryte[trytelength];
     bool once=false;
     bool verbose=false;
     bool cset=false;
@@ -52,17 +53,20 @@ int main( int argc, char *argv[] )
        cout << endl;
        cout << "Ternär Bal.: ";
        }
+       bool lzero = true;
        for(char i=0;i<11;i++)
        {
         if(tryte[i]==-1)
         {
          cout << "-";
+         lzero = false;
         }
         if(tryte[i]==1)
         {
          cout << "+";
+         lzero = false;
         }
-        if(tryte[i]==0)
+        if(tryte[i]==0 && (!lzero || i == trytelength - 1))
         {
          cout << "0";
         }
